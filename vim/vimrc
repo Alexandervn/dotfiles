@@ -1,0 +1,54 @@
+set nocompatible
+syntax enable
+set autoindent
+set smartindent
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set incsearch
+set hlsearch
+set ruler
+set wildmenu
+set number
+set autoread
+set backspace=indent,eol,start
+filetype plugin on
+filetype indent on
+set ttyfast
+set encoding=utf-8
+set showmatch
+set mat=0
+set wrap
+set linebreak
+set whichwrap+=<,>,h,l,[,] 
+set hidden
+
+let mapleader = ","
+nmap <leader>w :w!<cr>
+
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+nnoremap <C-L> :nohls<CR><C-L> " Redraw
+
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd Filetype sql set omnifunc=sqlcomplete#Complete
+autocmd FileType c set omnifunc=ccomplete#Complete
+
+au BufNewFile,BufRead *.md set ft=markdown 
+
+let php_sql_query=1
+let php_htmlInStrings=1
+"let php_folding=1
+let php_parent_error_close=1
+let php_parent_error_open=1
+
+:autocmd BufNewFile,BufRead *.phtml set ft=php
