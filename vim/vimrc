@@ -1,3 +1,8 @@
+" Pathogen
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
+" General
 set nocompatible
 syntax enable
 set autoindent
@@ -52,3 +57,17 @@ let php_parent_error_close=1
 let php_parent_error_open=1
 
 :autocmd BufNewFile,BufRead *.phtml set ft=php
+
+" Taglist
+let Tlist_WinWidth = 30
+let Tlist_Use_Right_Window = 1
+let Tlist_Compact_Format = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
+let Tlist_Inc_Winwidth = 0
+let Tlist_Close_On_Select = 1
+let Tlist_Process_File_Always = 1
+let Tlist_Display_Prototype = 0
+let Tlist_Display_Tag_Scope = 1
+let Tlist_Show_One_File = 1
+let Tlist_Use_SingleClick = 1
