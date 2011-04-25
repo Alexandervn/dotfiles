@@ -28,6 +28,10 @@ set linebreak
 set whichwrap+=<,>,h,l,[,] 
 set hidden
 
+" Colorscheme
+colorscheme solarized
+call togglebg#map("<F5>")
+
 let mapleader = ","
 nmap <leader>w :w!<cr>
 
