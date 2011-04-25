@@ -1,0 +1,5 @@
+[core]
+    excludesfile = ~/.gitignore
+
+[color]
+    ui = auto
