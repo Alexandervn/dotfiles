@@ -48,8 +48,6 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd Filetype sql set omnifunc=sqlcomplete#Complete
 autocmd FileType c set omnifunc=ccomplete#Complete
 
-au BufNewFile,BufRead *.md set ft=markdown 
-
 let php_sql_query=1
 let php_htmlInStrings=1
 "let php_folding=1
