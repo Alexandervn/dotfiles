@@ -71,3 +71,8 @@ let Tlist_Display_Prototype = 0
 let Tlist_Display_Tag_Scope = 1
 let Tlist_Show_One_File = 1
 let Tlist_Use_SingleClick = 1
+
+" Local config
+if filereadable(".vimrc.local")
+    source .vimrc.local
+endif
