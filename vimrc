@@ -28,6 +28,13 @@ set linebreak
 set whichwrap+=<,>,h,l,[,] 
 set hidden
 
+" Background
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+
 " Colorscheme
 colorscheme solarized
 call togglebg#map("<F5>")
