@@ -12,6 +12,9 @@ set softtabstop=4
 set expandtab
 set incsearch
 set hlsearch
+set ignorecase
+set smartcase
+set showmatch
 set ruler
 set wildmenu
 set number
@@ -21,7 +24,6 @@ filetype plugin on
 filetype indent on
 set ttyfast
 set encoding=utf-8
-set showmatch
 set mat=0
 set wrap
 set linebreak
