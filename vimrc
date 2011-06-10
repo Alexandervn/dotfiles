@@ -7,8 +7,8 @@ set nocompatible
 syntax enable
 set autoindent
 set smartindent
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 set incsearch
 set hlsearch
@@ -30,16 +30,15 @@ set linebreak
 set whichwrap+=<,>,h,l,[,] 
 set hidden
 
-" Background
+" Background and colorscheme
 if has('gui_running')
     set background=light
+    colorscheme solarized
+    call togglebg#map("<F5>")
 else
     set background=dark
+    colorscheme desert
 endif
-
-" Colorscheme
-colorscheme solarized
-call togglebg#map("<F5>")
 
 let mapleader = ","
 nmap <leader>w :w!<cr>
@@ -51,6 +50,7 @@ map <C-l> <C-W>l
 
 nnoremap <C-L> :nohls<CR><C-L> " Redraw
 
+" Autocommands
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -67,7 +67,11 @@ let php_htmlInStrings=1
 let php_parent_error_close=1
 let php_parent_error_open=1
 
-:autocmd BufNewFile,BufRead *.phtml set ft=php
+autocmd BufNewFile,BufRead *.phtml set ft=php
+autocmd BufNewFile,BufRead *.scss set ft=css
+
+autocmd FileType python set sw=4 sts=4
+autocmd FileType php set sw=4 sts=4
 
 " Taglist
 let Tlist_WinWidth = 30
