@@ -9,10 +9,14 @@ def green(text); colorize(text, "32"); end
 
 def symlink(src, target)
   if ((File.exists? target) && (File.symlink? target))
-    print "Overwrite existing symlink '#{target}'? (y/n) "
-    case STDIN.gets.chomp
-    when 'y'
-      do_symlink!(src, target)
+    if (File.readlink(target) == src)
+      puts green("Symlink already exists: " + target)
+    else
+      print "Overwrite existing symlink '#{target}'? (y/n) "
+      case STDIN.gets.chomp
+      when 'y'
+        do_symlink!(src, target)
+      end
     end
   else
     do_symlink(src, target)
@@ -29,7 +33,8 @@ def do_symlink(src, target)
   puts green("Created symlink: #{target}")
 end
 
-task :install do
+desc "Create symlinks to dotfiles in homedir"
+task :symlinks do
   includes = ['vimrc', 'gvimrc', 'gitignore', 'vim', 'bin']
   excludes = []
 
@@ -51,7 +56,6 @@ task :install do
     excludes.each do |exclude|
       puts " - " + red(exclude)
     end
-    puts "Failed.."
   else
     includes.each do |file|
       src     = File.join(ENV['PWD'], file)
