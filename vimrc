@@ -87,6 +87,9 @@ let Tlist_Display_Tag_Scope = 1
 let Tlist_Show_One_File = 1
 let Tlist_Use_SingleClick = 1
 
+" Locatie tags recursively in parent dirs
+set tags=./tags;
+
 " Local config
 if filereadable(".vimrc.local")
     source .vimrc.local
