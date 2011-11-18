@@ -11,3 +11,8 @@ Installation:
 - rake symlinks
 - git submodule init
 - git submodule update
+
+
+And for Command-T, if Vim is compiled with Ruby and all other dependencies are there:
+- cd ~/.dotfiles/vim/bundle/command-t/
+- rake make
