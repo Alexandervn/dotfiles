@@ -78,6 +78,8 @@ autocmd BufNewFile,BufRead *.scss set ft=css
 autocmd FileType python set sw=4 sts=4
 autocmd FileType php set sw=4 sts=4
 
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile} set ft=ruby
+
 " Drupal extensions.. brr.
 autocmd BufNewFile,BufRead *.module set ft=php
 autocmd BufNewFile,BufRead *.install set ft=php
