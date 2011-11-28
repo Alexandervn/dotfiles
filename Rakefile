@@ -35,7 +35,7 @@ end
 
 desc "Create symlinks to dotfiles in homedir"
 task :symlinks do
-  includes = ['vimrc', 'gvimrc', 'gitignore', 'vim', 'bin']
+  includes = ['vimrc', 'gvimrc', 'gitignore', 'vim', 'bin', 'tmux.conf']
   excludes = []
 
   includes.each do |file|
