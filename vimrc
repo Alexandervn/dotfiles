@@ -88,7 +88,7 @@ autocmd BufNewFile,BufRead *.profile set ft=php
 autocmd BufNewFile,BufRead *.view set ft=php
 
 " Lint
-:autocmd FileType php noremap <C-L> :!php -l %<CR>
+autocmd FileType php nmap <leader>l :!php -l %<CR>
 
 " Taglist
 let Tlist_WinWidth = 30
