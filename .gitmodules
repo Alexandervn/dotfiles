@@ -31,3 +31,6 @@
 [submodule "vim/bundle/syntastic"]
 	path = vim/bundle/syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/gitolite.vim"]
+	path = vim/bundle/gitolite.vim
+	url = git://github.com/tmatilai/gitolite.vim.git
