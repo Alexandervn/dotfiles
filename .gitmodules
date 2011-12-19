@@ -28,6 +28,12 @@
 [submodule "vim/bundle/vim-tmux"]
 	path = vim/bundle/vim-tmux
 	url = git://github.com/tsaleh/vim-tmux.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = git://github.com/scrooloose/syntastic.git
 [submodule "vim/bundle/gitolite.vim"]
 	path = vim/bundle/gitolite.vim
 	url = git://github.com/tmatilai/gitolite.vim.git
+[submodule "vim/bundle/vim-matchit"]
+	path = vim/bundle/vim-matchit
+	url = git://github.com/tsaleh/vim-matchit.git
