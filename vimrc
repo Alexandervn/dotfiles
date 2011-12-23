@@ -1,13 +1,23 @@
+" Pathogen
 call pathogen#infect()
 
+" Vim mode
 set nocompatible
 
+" Syntax coloring and filetype detection
 syntax enable
 filetype plugin indent on
 
+" UTF-8
 set encoding=utf-8
+
+" Support all three
 set fileformats=unix,dos,mac
+
+" Longer history (default: 20)
 set history=1000
+
+" No modelines
 set modelines=0
 
 " Autoread and allow hidden unsaved buffers but confirm before closing
@@ -15,9 +25,11 @@ set autoread
 set hidden
 set confirm
 
+" <leader> and quicker save
 let mapleader = ","
 nmap <leader>w :w!<CR>
 
+" No tabs, 4 spaces, autoindent
 set shiftwidth=4
 set softtabstop=4
 set tabstop=4
@@ -25,7 +37,11 @@ set expandtab
 set autoindent
 set smartindent
 set shiftround
+
+" Soft wrapping
+set wrap
 set linebreak
+set nolist
 
 " Continuing lines with h, l and backspace
 set backspace=2
