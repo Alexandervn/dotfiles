@@ -4,19 +4,20 @@ call pathogen#infect()
 " Vim mode
 set nocompatible
 
-" Syntax highlighting
+" Syntax coloring and filetype detection
 syntax enable
-
-" Enable filetype detection
 filetype plugin indent on
 
 " UTF-8
 set encoding=utf-8
 
-" Support all three, in this order
+" Support all three
 set fileformats=unix,dos,mac
 
-" Turn off modelines; I don't use them
+" Longer history (default: 20)
+set history=1000
+
+" No modelines
 set modelines=0
 
 " Autoread and allow hidden unsaved buffers but confirm before closing
@@ -24,57 +25,69 @@ set autoread
 set hidden
 set confirm
 
-" History; default is 20
-set history=1000
+" <leader> and quicker save
+let mapleader = ","
+nmap <leader>w :w!<CR>
 
-" No tabs, 4 spaces by default
+" No tabs, 4 spaces, autoindent
 set shiftwidth=4
 set softtabstop=4
-set tabstop=8
+set tabstop=4
 set expandtab
 set autoindent
 set smartindent
 set shiftround
+
+" Soft wrapping
+set wrap
+set linebreak
+set nolist
 
 " Continuing lines with h, l and backspace
 set backspace=2
 set whichwrap=h,l,<,>,[,]
 
 " Visual aid
-set showmatch
 set number
 set showcmd
 set cursorline
+set showmatch
 
 " No flickering, flashes or beeps
 set matchtime=0
 set visualbell t_vb=
 
-" Searching; type C-L or :noh to clear
+" Highlighted incremental search
+" Redraw like in Bash to clear the search
 set hlsearch
 set incsearch
+map <C-L> :nohls<CR>
 
-" Autocompletion in command mode
+" Regexes
+" Turn on "very magic" regex (:h /magic)
+" Set the 'g' flag by default (substitute all matches in line instead of one)
+" Ignore case unless capitals are used
+nnoremap / /\v
+vnoremap / /\v
+set gdefault
+set ignorecase
+set smartcase
+
 " Complete until point of ambiguity; tab through other options
 set wildmenu
 set wildmode=list:longest,full
 set wildchar=<Tab>
+set wildignorecase
 set wildignore=*.png,*.jpg,*.gif
 
 " Not two spaces after . or ? when joining with J
 set nojoinspaces
 
-" In many terminal emulators the mouse works just fine, thus enable it
-if has('mouse')
-    set mouse=a
-endif
-
-" Always set ttyfast, although it's usually already set by Vim itself
-" And do no redraw while running macros
-" Set title in terminal
+" Terminals
 set ttyfast
 set lazyredraw
 set title
+set mouse=a
 
 " Display lastline, e.g. in minified files (instead of @@@@..)
 set display=lastline
@@ -84,33 +97,14 @@ set laststatus=2
 set noruler
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
-" Regexes
-" Turn on "very magic" regex (:h /magic)
-" Set the 'g' flag by default (substitute all matches in line instead of one)
-" Ignore case unless capitals are used
-vmap / /\v
-set gdefault
-set ignorecase
-set smartcase
-
-" Quicker save; clear screen after searching; Ack
-let mapleader = ","
-nmap <leader>w :w!<CR>
-map <C-L> :noh<CR>
-map <leader>a :Ack! 
-
-" Make Y work like C and D; use yy to yank lines
-noremap Y y$
+" Easy scrolling through results with up/down
+map <leader>a :Ack!
+nmap <up> :cprevious<CR>
+nmap <down> :cnext<CR>
 
 " Expected up/down on wrapped lines
 nnoremap <silent> k gk
 nnoremap <silent> j gj
-
-" Better use for arrow keys - up/down handy in Ack
-nmap <right> :bnext<CR>
-nmap <left> :bprevious<CR>
-nmap <up> :cprevious<CR>
-nmap <down> :cnext<CR>
 
 " Shortcut to file's dir; e.g. :cd %%
 " http://vimcasts.org/episodes/the-edit-command/
@@ -137,9 +131,6 @@ autocmd BufNewFile,BufRead *.rss,*.atom set ft=xml
 autocmd BufNewFile,BufRead Gemfile,Rakefile,Vagrantfile,Capfile set ft=ruby
 autocmd BufNewFile,BufRead *.{module,install,test,info,inc,profile,view} set ft=php
 
-" Wrapping in text files; by word and leave some space for the linenumbers
-autocmd FileType text,markdown setlocal wrap linebreak nolist wrapmargin=5
-
 " Extra settings for PHP
 let php_sql_query=1
 let php_htmlInStrings=1
@@ -158,7 +149,7 @@ let Tlist_Display_Tag_Scope = 1
 let Tlist_Show_One_File = 1
 let Tlist_Use_SingleClick = 1
 
-" Nerdtree
+" NERDTree
 map \ :NERDTreeToggle<CR>
 map \| :NERDTreeFind<CR>
 
@@ -182,6 +173,6 @@ if has("eval")
 endif
 
 " Local config
-if filereadable("~/.vimrc.local")
+if filereadable(expand("~/.vimrc.local"))
     source ~/.vimrc.local
 endif
