@@ -77,7 +77,6 @@ set smartcase
 set wildmenu
 set wildmode=list:longest,full
 set wildchar=<Tab>
-set wildignorecase
 set wildignore=*.png,*.jpg,*.gif
 
 " Not two spaces after . or ? when joining with J
