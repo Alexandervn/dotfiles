@@ -8,6 +8,10 @@ set nocompatible
 syntax enable
 filetype plugin indent on
 
+" Backups and swapfiles, but not in my working dir please
+set backupdir=~/tmp,/tmp
+set directory=~/tmp,/tmp
+
 " UTF-8
 set encoding=utf-8
 
