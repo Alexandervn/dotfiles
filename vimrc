@@ -8,6 +8,10 @@ set nocompatible
 syntax enable
 filetype plugin indent on
 
+" Backups and swapfiles, but not in my working dir please
+set backupdir=~/tmp,/tmp
+set directory=~/tmp,/tmp
+
 " UTF-8
 set encoding=utf-8
 
@@ -77,7 +81,6 @@ set smartcase
 set wildmenu
 set wildmode=list:longest,full
 set wildchar=<Tab>
-set wildignorecase
 set wildignore=*.png,*.jpg,*.gif
 
 " Not two spaces after . or ? when joining with J
