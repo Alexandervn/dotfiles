@@ -113,6 +113,22 @@ nnoremap <silent> j gj
 " http://vimcasts.org/episodes/the-edit-command/
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
+" 'Paste/No mouse' toggle with <F3>
+" So you can paste over SSH with left mouse click
+map <F3> :call TogglePasteAndMouse()<CR>
+
+function! TogglePasteAndMouse()
+  if &mouse == 'a'
+    set mouse=
+    set paste
+    echo "Mouse off, paste on"
+  else
+    set mouse=a
+    set nopaste
+    echo "Mouse on, paste off"
+  endif
+endfunction
+
 " Solarized
 if has('gui_running')
     set background=light
