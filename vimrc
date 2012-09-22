@@ -113,11 +113,11 @@ nnoremap <silent> j gj
 " http://vimcasts.org/episodes/the-edit-command/
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-" 'Paste/No mouse' toggle with <F3>
-" So you can paste over SSH with left mouse click
-map <F3> :call TogglePasteAndMouse()<CR>
+" MousePasteToggle with <F3>
+" For paste with <RightMouse> in insert mode
+map <F3> :call MousePasteToggle()<CR>
 
-function! TogglePasteAndMouse()
+function! MousePasteToggle()
   if &mouse == 'a'
     set mouse=
     set paste
