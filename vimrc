@@ -139,9 +139,6 @@ endif
 colorscheme solarized
 call togglebg#map("<F5>")
 
-" Command T
-nmap <leader>t :CommandTFlush<cr>:CommandT<CR>
-
 " Extra file detection
 autocmd BufNewFile,BufRead *.phtml set ft=php
 autocmd BufNewFile,BufRead *.scss set ft=css
