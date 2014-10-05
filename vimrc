@@ -101,7 +101,7 @@ set noruler
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
 " Easy scrolling through results with up/down
-map <leader>a :Ack!
+map <leader>a :Ack!<CR>
 nmap <up> :cprevious<CR>
 nmap <down> :cnext<CR>
 
@@ -173,6 +173,9 @@ map \| :NERDTreeFind<CR>
 " Syntastic
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_jump = 1
+
+" Ctrlp
+map <leader>s :CtrlP<CR>
 
 " Locate tags recursively in parent dirs
 set tags=./tags;
