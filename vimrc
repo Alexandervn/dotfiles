@@ -147,6 +147,7 @@ autocmd BufNewFile,BufRead *.rss,*.atom set ft=xml
 autocmd BufNewFile,BufRead Gemfile,Rakefile,Vagrantfile,Capfile set ft=ruby
 autocmd BufNewFile,BufRead *.{module,install,test,info,inc,profile,view} set ft=php
 autocmd BufNewFile,BufRead *.go set filetype=go
+autocmd BufNewFile,BufRead *.cshtml set filetype=html
 
 " Extra settings for PHP
 let php_sql_query=1
