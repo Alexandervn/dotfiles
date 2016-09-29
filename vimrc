@@ -141,7 +141,6 @@ call togglebg#map("<F5>")
 
 " Extra file detection
 autocmd BufNewFile,BufRead *.phtml set ft=php
-autocmd BufNewFile,BufRead *.scss set ft=css
 autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufRead *.rss,*.atom set ft=xml
 autocmd BufNewFile,BufRead Gemfile,Rakefile,Vagrantfile,Capfile set ft=ruby
