@@ -1,0 +1,14 @@
+{
+    "workbench.colorTheme": "Solarized Dark",
+    "editor.autoClosingBrackets": false,
+    "html.autoClosingTags": false,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "vim.insertModeKeyBindingsNonRecursive": [{
+        "before": ["ESC"],
+        "after": ["ESC"],
+        "commands": [{
+            "command": "editor.action.formatDocument",
+            "args": []
+        }]
+    }]
+}
